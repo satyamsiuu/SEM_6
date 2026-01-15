@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="showCourse(); return false;">
+        <label for="course">Choose a course:</label>
+        <select id="course" name="course">
+            <option value="" selected disabled>-- Select a course --</option>
+            <option value="fs">Full Stack Development</option>
+            <option value="ds">Data Science</option>
+            <option value="cybersec">Cyber Security</option>
+            <option value="ai">Artificial Intelligence</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+<h3 id="selectedCourse"></h3>
+  
+<script>
+    function showCourse() {
+        var courseSelect = document.getElementById("course");
+        var selectedValue = courseSelect.value;
+
+        if (selectedValue === "") {
+            document.getElementById("selectedCourse").innerText =
+                "No course selected";
+        } else {
+            var selectedText =
+                courseSelect.options[courseSelect.selectedIndex].text;
+
+            document.getElementById("selectedCourse").innerText =
+                "You selected: " + selectedText;
+        }
+    }
+</script>
+
+</body>
+</html>
