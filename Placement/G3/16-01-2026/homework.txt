@@ -1,0 +1,21 @@
+HACK WITH INFY
+
+Sample 1:
+
+i) Store the energy drained by each exercise in an array A.
+
+ii) Sort the array A in descending order.
+
+iii) Initialize two variables:
+    a) energy = E
+    b) count = 0
+
+iv) Traverse the sorted array.
+
+v) For each exercise, perform it at most two times.
+
+vi) After each performance, subtract the exercise energy from energy and increment count.
+
+vii) If energy becomes less than or equal to 0, return count.
+
+viii) If all exercises are performed and energy is still greater than 0, return -1.

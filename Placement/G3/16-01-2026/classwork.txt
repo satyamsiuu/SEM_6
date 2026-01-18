@@ -1,0 +1,52 @@
+Leetcode Questions
+
+1) 2148: Count Elements With Strictly Smaller and Greater Elements
+
+i) Find the min element and max element in the array
+ii) Iterate through the array to check if the element is less that the max and greater than the min
+iii) Increase the count if condition is meet and after the loop return the count.
+
+2) 766: Toeplitz Matrix
+
+i) Nested loops outer(i till i<n-1) and inner(j till j<m-1) 
+ii) Check if a[i][j]!=a[i+1][j+1] and if satisfy return false
+iii) After the loops return true
+
+3) 605: Can place flowers
+
+i) if n==0 return true;
+ii) if size of flowerbed ==0 return false
+iii) if size of flowerbed == 1 then check if it is 0 then return true else false
+iv) Iterate through the array
+v) Divide into three cases when i==0,i==size-1 and else
+vi) When i==0 check if the current is 0 and the next is 0 then place the flower on i and decrement n by 1
+vii) When i==size-1 check if the current is 0 and the before one is 0 then place the flower on i and decrement n by 1
+viii) Else case if current element is 0 and before is 0 and after is 0 then place flower at i and decrement n by 1
+ix) If n is 0 then return true
+x) After loop return false
+
+4) 134: Gas Station
+
+ii) Initialize three variables:
+    a) total = 0 (to track total gas balance)
+    b) curr = 0 (to track current gas balance)
+    c) start = 0 (possible starting index)
+
+ii) Traverse the gas stations from index 0 to n-1.
+
+iii) At each station, calculate the difference:
+    diff = gas[i] - cost[i]
+
+iv) Add diff to total and curr.
+
+v) If curr becomes negative, then the journey cannot start from the current start index.
+
+vi) Update start to i + 1 and reset curr to 0.
+
+vii) Continue this process for all stations.
+
+viii) After completing the loop, check if total is greater than or equal to 0.
+
+ix) If total >= 0, return start as the valid starting index.
+
+x) If total < 0, return -1 (not possible to complete the circuit).

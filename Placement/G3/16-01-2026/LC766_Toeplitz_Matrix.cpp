@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isToeplitzMatrix(vector<vector<int>>& matrix) {
+    int n = matrix.size();
+    int m = matrix[0].size();
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (i + 1 < n && j + 1 < m) {
+                if (matrix[i][j] != matrix[i + 1][j + 1])
+                    return false;
+            }
+        }
+    }
+    return true;
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<vector<int>> matrix(n, vector<int>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    if (isToeplitzMatrix(matrix))
+        cout << "true";
+    else
+        cout << "false";
+
+    return 0;
+}
