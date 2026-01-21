@@ -1,0 +1,14 @@
+<html> <body><h2>Prompt Box Example</h2>
+<button onclick="showPrompt()">Enter Name</button>
+<p id="output"></p>
+<script>
+function showPrompt() {
+var name = prompt("Enter your name:");
+if (name === null || name === "") {
+document.getElementById("output").innerHTML = "No name entered";
+} else {
+document.getElementById("output").innerHTML =
+"Hello, " + name;
+}
+}
+</script> </body> </html> 

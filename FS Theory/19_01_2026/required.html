@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Required Field Validation</title>
+</head>
+<body>
+
+    <h2>HTML5 Required Attribute</h2>
+    <form>
+        Name:
+        <input type="text" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>JavaScript Validation</h2>
+    Name:
+    <input type="text" id="fname">
+    <br><br>
+    <button onclick="check()">Submit</button>
+
+    <script>
+        function check() {
+            var name = document.getElementById("fname").value.trim();
+            if (name === "") {
+                alert("Field cannot be empty");
+            }
+        }
+    </script>
+
+</body>
+</html>

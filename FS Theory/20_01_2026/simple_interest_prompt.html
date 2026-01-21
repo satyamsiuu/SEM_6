@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest</title>
+</head>
+<body>
+    <form>
+        <button type="button" onclick="calculateSimpleInterest()">Calculate Simple Interest</button><br><br>
+        <script>
+            function calculateSimpleInterest() {
+                var principal = prompt("Enter Principal Amount");
+                if (principal == null || principal === "") {
+                    alert("Please enter principal amount");
+                    return;
+                }
+
+                var rate = prompt("Enter Rate of Interest");
+                if (rate == null || rate === "") {
+                    alert("Please enter rate of interest");
+                    return;
+                }
+
+                var time = prompt("Enter Time in years");
+                if (time == null || time === "") {
+                    alert("Please enter time");
+                    return;
+                }
+
+                principal = parseFloat(principal);
+                rate = parseFloat(rate);
+                time = parseFloat(time);
+
+                if (principal <= 0 || rate <= 0 || time <= 0 || 
+                    isNaN(principal) || isNaN(rate) || isNaN(time)) {
+                    alert("Enter valid positive numbers only");
+                    return;
+                }
+
+                var simpleInterest = (principal * rate * time) / 100;
+
+                alert("Simple Interest = " + simpleInterest.toFixed(2));
+            }
+        </script>
+    </form>
+</body>
+</html>

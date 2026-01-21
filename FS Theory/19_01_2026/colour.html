@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Values After Submit</title>
+</head>
+<body>
+
+    <h2>Select Date, Time, and Color</h2>
+
+    <label>Date:</label><br>
+    <input type="date" id="date"><br><br>
+
+    <label>Time:</label><br>
+    <input type="time" id="time"><br><br>
+
+    <label>Color:</label><br>
+    <input type="color" id="color"><br><br>
+
+    <button onclick="showValues()">Submit</button>
+
+    <!-- Hidden output -->
+    <div id="result" style="display:none;">
+        <h3>Selected Values:</h3>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function showValues() {
+            var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
+            var color = document.getElementById("color").value;
+
+            document.getElementById("output").innerHTML =
+                "Date: " + date + "<br>" +
+                "Time: " + time + "<br>" +
+                "Color: " + color;
+
+            // Show text only after submit
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

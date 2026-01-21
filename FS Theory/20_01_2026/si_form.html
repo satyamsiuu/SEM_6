@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Interest</title>
+</head>
+<body>
+
+    <form onsubmit="return calculateSimpleInterest()">
+        <h3>Simple Interest Calculator</h3>
+
+        <label>Principal Amount:</label><br>
+        <input type="number" id="principal"><br><br>
+
+        <label>Rate of Interest (% per year):</label><br>
+        <input type="number" id="rate"><br><br>
+
+        <label>Time (in years):</label><br>
+        <input type="number" id="time"><br><br>
+
+        <input type="submit" value="Calculate">
+        <br><br>
+
+        <!-- Hidden result section -->
+        <div id="resultBox" style="display:none;">
+            <label>Simple Interest:</label><br>
+            <input type="text" id="result" readonly>
+        </div>
+    </form>
+
+    <script>
+        function calculateSimpleInterest() {
+            var principal = document.getElementById("principal").value;
+            var rate = document.getElementById("rate").value;
+            var time = document.getElementById("time").value;
+
+            if (principal === "" || rate === "" || time === "") {
+                alert("All fields are required");
+                return false;
+            }
+
+            principal = parseFloat(principal);
+            rate = parseFloat(rate);
+            time = parseFloat(time);
+
+            if (principal <= 0 || rate <= 0 || time <= 0) {
+                alert("Enter positive values only");
+                return false;
+            }
+
+            var simpleInterest = (principal * rate * time) / 100;
+
+            document.getElementById("result").value = simpleInterest.toFixed(2);
+
+            // Show result only after calculation
+            document.getElementById("resultBox").style.display = "block";
+
+            return false; // prevent page reload
+        }
+    </script>
+
+</body>
+</html>

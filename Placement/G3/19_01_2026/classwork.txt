@@ -1,0 +1,89 @@
+Leetcode Questions
+
+1) 1598 – Crawler Log Folder
+
+Approach:
+
+i) Initialize a variable depth = 0 to represent the current folder level.
+
+ii) Traverse the logs array one by one.
+
+iii) If the log is "../" and depth > 0, decrement depth.
+
+iv) If the log is "./", do nothing (stay in the same folder).
+
+v) Otherwise, the log represents entering a folder, so increment depth.
+
+vi) After processing all logs, return depth.
+
+HW392
+
+2) 999 – Available Captures for Rook
+
+Approach:
+
+i) Initialize two variables x and y to store the position of the rook.
+ii) Traverse the 8×8 board to find the cell containing 'R'.
+iii) Once found, store its row index in x and column index in y.
+
+iv) From the rook’s position, check in four directions:
+
+Right direction
+    • Move column-wise to the right.
+    • If 'B' is encountered, stop.
+    • If 'p' is encountered, increment count and stop.
+
+Left direction
+    • Move column-wise to the left.
+    • If 'B' is encountered, stop.
+    • If 'p' is encountered, increment count and stop.
+
+Downward direction
+    • Move row-wise downward.
+    • If 'B' is encountered, stop.
+    • If 'p' is encountered, increment count and stop.
+
+Upward direction
+    • Move row-wise upward.
+    • If 'B' is encountered, stop.
+    • If 'p' is encountered, increment count and stop.
+
+v) After checking all four directions, return the total count.
+
+
+3) 121 – Best Time to Buy and Sell Stock
+
+Approach:
+
+i) Initialize min_price to a very large value.
+ii) Initialize max_profit to 0.
+
+iii) Traverse the prices array from left to right.
+
+iv) For each price, calculate the profit by subtracting min_price from the current price.
+
+v) Update max_profit if the calculated profit is greater than the current max_profit.
+
+vi) Update min_price if the current price is smaller than the existing min_price.
+
+vii) After the loop, return max_profit.
+
+
+4) 729 – My Calendar I
+
+Approach:
+
+i) Maintain a vector mycal to store all booked time intervals as (start, end) pairs.
+
+ii) For every new booking request (startTime, endTime), traverse all previously booked intervals.
+
+iii) For each existing interval (s, e), check if it overlaps with the new interval using the condition:
+    max(s, startTime) < min(e, endTime)
+
+iv) If an overlap is found, return false (booking not possible).
+
+v) If no overlap is found after checking all intervals, add the new interval to mycal.
+
+vi) Return true to indicate successful booking.
+
+HW731

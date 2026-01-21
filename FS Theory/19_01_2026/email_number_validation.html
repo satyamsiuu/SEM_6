@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Validation</title>
+</head>
+<body>
+
+    <h2>HTML5 Email Validation</h2>
+    <form>
+        Email:
+        <input type="email" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>JavaScript Email Validation</h2>
+    Email:
+    <input type="text" id="email">
+    <br><br>
+    <button onclick="validateEmail()">Check</button>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById("email").value.trim();
+            var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!pattern.test(email)) {
+                alert("Invalid email");
+            } else {
+                alert("Valid email");
+            }
+        }
+    </script>
+
+</body>
+</html>
